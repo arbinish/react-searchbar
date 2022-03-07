@@ -17,7 +17,7 @@ export default function SearchBar({ searchFunc, fields, placeholder }) {
     setSelected(true);
     setShowResults(false);
   };
-  const onChangeHandler = (e) => {
+  const onChangeHandler = async (e) => {
     let term = e.target.value;
     if (term.length < 1) {
       setShowResults(false);
@@ -25,7 +25,7 @@ export default function SearchBar({ searchFunc, fields, placeholder }) {
     } else {
       // assign to local var and compare length
       // state change, ie `data` mutation, may be async
-      let response = searchFunc(term);
+      let response = await searchFunc(term);
       setData(response);
       if (response.length > 0) {
         setShowResults(true);

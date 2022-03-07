@@ -1,13 +1,8 @@
 import "./styles.scss";
 import SearchBar from "./SearchBar";
 import countryData from "./country.json";
-import names from "./names.json";
-
-const nameFinder = (term) => {
-  return names.filter((d) => {
-    return d.firstname.toLowerCase().startsWith(term.toLowerCase());
-  });
-};
+// import names from "./names.json";
+import { useEffect, useState } from 'react';
 
 const termFinder = (term) => {
   return countryData.filter((d) =>
@@ -15,6 +10,27 @@ const termFinder = (term) => {
   );
 };
 export default function App() {
+  const [data, setData] = useState([]);
+
+  const fetchData = async (q) => {
+    const r = await fetch(`/api/v1/names?q=${q}`)
+      .then(d => d.json())
+      .then(d => {
+          setData(d.data);
+          return d.data;
+      });
+    return r;
+  }
+  const nameFinder = async (term) => {
+    let _data = data;
+    if (term.length == 1) {
+      _data = await fetchData(term[0]);
+    }
+    return _data.filter((d) => {
+      return d.firstname.toLowerCase().startsWith(term.toLowerCase());
+    });
+  };
+
   return (
     <div className="App">
       {termFinder !== null && (
