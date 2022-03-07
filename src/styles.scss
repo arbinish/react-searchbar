@@ -1,0 +1,81 @@
+.App {
+  box-sizing: border-box;
+  margin: 0;
+  padding:0 ;
+  font-family: sans-serif;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  // justify-content: center;
+  align-items: center;
+  width: 95vw;
+  column-gap: 1rem;
+  // height: 99vh;
+
+  .SearchWrapper {
+    // border: 1px solid red;
+    width: 90vw;
+    svg {
+      position: relative;
+
+      &.svg-search {
+      right: -2rem;
+    }
+    &.svg-close {
+      right: 2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  }
+  input {
+    // border: 1px solid green;
+    width: 60%;
+    padding: 0.5rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    font-family: Lato;
+    &:-ms-input-placeholder {
+      text-align: center;
+    }
+  &::-moz-placeholder {
+    text-align: center;
+  }
+  &::-webkit-input-placeholder {
+    text-align: center;
+    font-variant: small-caps;
+    font-style: italic;
+  }
+}
+  .SearchResults {
+    width: 50%;
+    font-size: 1rem;
+    max-height: 50vh;
+    overflow-y: auto;
+    // border: 3px solid rgb(143, 143, 153);
+    background-color: rgb(143, 143, 153, 0.4);
+    padding: 0 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    // height: 50vh;
+
+    ul {
+      padding: 0;
+      list-style-type: none;
+      li {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 0 1rem;
+        border-radius: 0.3rem;
+        &:hover {
+          cursor: pointer;
+          background-color: rgb(32, 32, 31);
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
