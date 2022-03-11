@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-searchbar/static/css/main.240d6c73.css",
+    "main.js": "/react-searchbar/static/js/main.ea96869f.js",
+    "index.html": "/react-searchbar/index.html",
+    "main.240d6c73.css.map": "/react-searchbar/static/css/main.240d6c73.css.map",
+    "main.ea96869f.js.map": "/react-searchbar/static/js/main.ea96869f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.240d6c73.css",
+    "static/js/main.ea96869f.js"
+  ]
+}
