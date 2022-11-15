@@ -39,6 +39,7 @@ export default function App() {
         <SearchBar
           searchFunc={nameFinder}
           placeholder="search name..."
+          onSelect={(e) => console.log('you selected', e)}
           fields={["firstname", "lastname"]} />
       )}
     </div>

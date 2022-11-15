@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { FaSearch, FaRegTimesCircle } from "react-icons/fa";
 
-export default function SearchBar({ searchFunc, fields, placeholder }) {
+export default function SearchBar({ searchFunc, fields, placeholder, onSelect }) {
   const [showResults, setShowResults] = useState(false);
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState(false);
@@ -16,6 +16,7 @@ export default function SearchBar({ searchFunc, fields, placeholder }) {
     textRef.current.value = val.join(", ");
     setSelected(true);
     setShowResults(false);
+    onSelect(record);
   };
   const onChangeHandler = async (e) => {
     let term = e.target.value;

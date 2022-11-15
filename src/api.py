@@ -35,6 +35,6 @@ if __name__ == "__main__":
     with open("country.json") as fd:
         country_db = json.load(fd)
     
-    with open(static_path.parent / 'index.html') as fd:
-        index_file = fd.read()
+    # with open(static_path.parent / 'index.html') as fd:
+    #    index_file = fd.read()
     app.run(debug=True)
